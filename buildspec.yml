@@ -1,0 +1,17 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      nodejs: 18
+    commands:
+      - npm ci || true
+  build:
+    commands:
+      - echo 'Build complete'
+artifacts:
+  files:
+    - appspec.yml
+    - scripts/**/*
+    - server.js
+    - package.json
+  discard-paths: no
