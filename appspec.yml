@@ -1,0 +1,14 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /home/ec2-user/myapp
+hooks:
+  BeforeInstall:
+    - location: scripts/install_dependencies.sh
+  AfterInstall:
+    - location: scripts/create_service.sh
+  ApplicationStop:
+    - location: scripts/stop_server.sh
+  ApplicationStart:
+    - location: scripts/start_server.sh
